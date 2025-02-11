@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Color Detection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #00ff88, #00b4d8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            padding: 1rem;
+            border-bottom: 2px solid #333;
+        }
+
+        .video-feed-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+            margin: 0 auto;
+            max-width: 640px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-feed-container:hover {
+            transform: scale(1.02);
+        }
+
+        .video-feed-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #333;
+        }
+
+        .info-text {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Live Color Detection</h1>
+        <div class="video-feed-container">
+            <img src="{{ url_for('video_feed') }}" alt="Live Video Feed">
+        </div>
+        <p class="info-text">Real-time color detection processing active</p>
+    </div>
+</body>
+</html>
